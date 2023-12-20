@@ -38,13 +38,14 @@ video{
 }
 
 #box{
-    display: flex;
+    justify-content: center;
     align-items: center;
+    display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 1000px;
-    padding: 0 2rem;
     height: 100%;
+    margin: 10px 70px;
 }
 
 #procura{
@@ -53,8 +54,7 @@ video{
     align-items: center;
     margin-right: 50px;
     position: absolute;
-    top: 50%;
-    
+    top: 50%;  
 }
 
 #procura button{

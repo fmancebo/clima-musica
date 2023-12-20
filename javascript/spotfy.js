@@ -24,11 +24,8 @@ function obterDataAtual(){
 }
 
 
-async function obterTopAlbunsPorPais(country, forceUpdate = false){
-    // Se forceUpdate for true, ignore o cache e busque os dados mais recentes
-    if (forceUpdate){
-        // Se forceUpdate for true, limpe o cache
-    }
+async function obterTopAlbunsPorPais(country){
+
     try{
         const accessToken = await obterAcessoToken();
         const dataAtual = obterDataAtual();
@@ -56,21 +53,27 @@ async function obterTopAlbunsPorPais(country, forceUpdate = false){
     }
 }
 const ulElement = document.querySelector('#playlist-caixa');
-const liElement = ulElement.querySelectorAll('li');
 
-function mostrarMusica(dados){
-    liElement.forEach((liElement, index)=> {
-        const imgElement = liElement.querySelector('img');
+
+function mostrarMusica(dados){                                      // A função 'mostrarMusica' é chamada com um parâmetro 'dados', que contém as informações das playlists.
+    const liElement = ulElement.querySelectorAll('li');             // Aqui, 'liElement' é declarado dentro da função para garantir que ele sempre se refira aos elementos 'li' atuais no DOM.
+
+    liElement.forEach((liElement, index)=> {                             // Este loop percorre cada elemento 'li'
+        const imgElement = liElement.querySelector('img');               // Aqui, 'imgElement' e 'pElement' são referências para o elemento 'img' e 'p' dentro do atual elemento 'li'.
         const pElement = liElement.querySelector('p');
-
+                                                                        // Aqui, a imagem e o texto do elemento 'li' são atualizados com as informações da playlist.
         imgElement.src = dados[index].image;
         pElement.textContent = dados[index].name;
 
-        liElement.addEventListener('click', function() {
-        window.open(`https://open.spotify.com/playlist/${dados[index].id}`, '_blank');
+        const novoLiElement = liElement.cloneNode(true);                // O antigo elemento 'li' é substituído pelo novo no DOM.
+        liElement.parentNode.replaceChild(novoLiElement, liElement);
+
+        novoLiElement.addEventListener('click', function() {             // Aqui, um novo event listener é adicionado ao novo elemento 'li'. Quando o elemento 'li' é clicado, ele abre a playlist no Spotify.
+            window.open(`https://open.spotify.com/playlist/${dados[index].id}`, '_blank');
         });
 
     });
+    
 
     document.querySelector('#playlist-caixa').style.visibility = 'visible';
 }
