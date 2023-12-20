@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima & Musica</title>
+    <link rel="icon" type="image/png" sizes="16x16"  href="./img/favicon-16x16.png">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+    <main id="container">
+        <video autoplay muted loop>  <!--pixbay-- para pegar videos-->
+            <source id="video-source" src="./img/video/video1.mp4" type="video/mp4">
+        </video>
+    
+    <section id="box">
+        <div id="procura">
+            <button onclick="botaodebusca()">
+                <img src="./img/assets/Pesquisa.png" alt="icone-lupa" id="icon-lupa">
+            </button>
+            <input id="input-busca" placeholder="coloque o nome da cidade" type="text">
+        </div>
+    
+    <section id="wrapper">
+        <div id="conteudo-clima">
+            <img id="icone-tempo" src="./img/assets/01d.png" alt="icone-tempo">
+            <h2 id="nome-cidade">Paris</h2>
+            <h3 id="temperatura">22C°</h3>
+
+            <div id="conteudo-variacoes">
+                <p id="max-temp"> max: 23C°</p>
+                <p id="min-temp">min: 19C°</p>
+            </div>
+        </div>
+        <div id="conteudo-musica">
+            <img id="icone-musica" src="./img/assets/Musica.png" alt="icone-musica">
+            <h2>Playlist</h2>   
+            <ul id="playlist-caixa">
+                <li>
+                    <img src="./img/image 3.png" alt="spotify-icon">
+                    <p>Nouveate pop</p>
+                </li>
+                <li>
+                    <img src="./img/image 3.png" alt="spotify-icon">
+                    <p>Nouveate pop</p>
+                </li>
+                <li>
+                    <img src="./img/image 3.png" alt="spotify-icon">
+                    <p>Nouveate pop</p>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+ 
+    </section>
+    
+</main>
+<script src="./javascript/script.js"></script>
+<script src="./javascript/spotfy.js"></script>
+<script src="./javascript/video.js"></script>
+</body>
+</html>
