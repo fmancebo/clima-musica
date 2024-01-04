@@ -24,6 +24,8 @@ input.style.width = '300px';
 input.style.padding = '0.5rem 0.5rem 0.5rem 3.1rem';
 input.style.transition = 'all 0.5s ease-in-out 0s';
 input.value == "";
+input.style.margin = '0 auto'; // Centraliza o input horizontalmente
+input.style.display = 'block'; // Necessário para a centralização funcionar
 }
 
 function mostrarEnvelope(){
