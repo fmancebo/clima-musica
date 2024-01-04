@@ -32,7 +32,7 @@ function mostrarEnvelope(){
     document.querySelector('#procura').style.position = 'initial';
     document.querySelector('#procura').style.marginTop  = '30px';
     document.querySelector('#procura').style.marginBottom = '30px';
-
+    document.querySelector('#container').style.position = 'relative';
 }
 
 function movimentoInput(inputValue){
