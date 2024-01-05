@@ -39,6 +39,7 @@ video{
     object-fit: cover;
     background-position: center;
     z-index: -1;
+    pointer-events: none;
 }
 
 
@@ -51,6 +52,7 @@ video{
     align-items: center;
     flex-direction: column;
     margin: 10px 70px;
+    z-index: 2;
 }
 
 #procura{
@@ -60,6 +62,7 @@ video{
     margin-right: 50px;
     position: absolute;
     top: 50%;  
+    z-index: 3;
 }
 
 #procura button{
